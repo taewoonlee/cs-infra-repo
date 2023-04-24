@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "bluerain"
+  profile = "bluerain2"
   region  = "ap-northeast-2"
 }
 
