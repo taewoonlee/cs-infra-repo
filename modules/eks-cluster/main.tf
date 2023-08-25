@@ -67,19 +67,25 @@ module "eks" {
   }
 
   # console identity mapping (AWS user)
-  # eks configmap aws-auth에 콘솔 사용자 혹은 역할을 등록
+    # eks configmap aws-auth에 콘솔 사용자 혹은 역할을 등록
   manage_aws_auth_configmap = true
 
   aws_auth_users = [
     {
-      userarn  = "arn:aws:iam::870393486939:user/bluerain2"
-      username = "bluerain2"
+      userarn  = "arn:aws:iam::432089655801:user/bluerain-admin"
+      username = "bluerain-admin"
+      groups   = ["system:masters"]
+    },
+    
+    {
+      userarn  = "arn:aws:iam::432089655801:user/bluerain-admin2"
+      username = "bluerain-admin2"
       groups   = ["system:masters"]
     },
   ]
 
   aws_auth_accounts = [
-    "870393486939"
+    "432089655801"
   ]
 }
 
